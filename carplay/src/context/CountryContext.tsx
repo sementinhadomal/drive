@@ -21,13 +21,8 @@ export const CountryProvider: React.FC<{ children: React.ReactNode }> = ({ child
     return 'mx';
   });
 
-  const [isModalOpen, setIsModalOpen] = useState(() => {
-    if (typeof window !== 'undefined') {
-      // Automatically open on first load if no country has been saved yet
-      return !window.localStorage.getItem('diydeg_country');
-    }
-    return false;
-  });
+  // Always open modal as soon as the visitor enters the site
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   const handleSetCountry = (code: CountryCode) => {
     if (COUNTRIES[code]) {
