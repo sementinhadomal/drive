@@ -84,16 +84,16 @@ export const COUNTRIES: Record<CountryCode, Country> = {
     currency: 'EUR',
     currencySymbol: 'EUR',
     delivery: 'Envío gratis a toda España',
-    price: 39.90,
-    oldPrice: 115.45,
+    price: 36.50,
+    oldPrice: 105.60,
     priceDisplay: {
       symbol: '',
-      integer: '39',
-      decimal: '.90',
+      integer: '36',
+      decimal: '.50',
     },
-    formattedPrice: '39,90 EUR',
-    formattedOldPrice: '115,45 EUR',
-    savings: 'Ahorra 75,55 EUR (65%)',
+    formattedPrice: '36,50 EUR',
+    formattedOldPrice: '105,60 EUR',
+    savings: 'Ahorra 69,10 EUR (65%)',
   },
 };
 
