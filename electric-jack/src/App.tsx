@@ -317,7 +317,7 @@ function Home() {
                 <div className="product-current-price">
                   <strong>{country.priceDisplay.integer}</strong>
                   {country.priceDisplay.decimal && <sup>{country.priceDisplay.decimal}</sup>}
-                  <span style={{ fontSize: '18px', marginLeft: '6px', fontWeight: 800, color: '#205aa7' }}>{country.currency}</span>
+                  <span style={{ fontSize: '18px', marginLeft: '6px', fontWeight: 800, color: '#b52240' }}>{country.currency}</span>
                 </div>
                 <del className="product-old-price">{country.formattedOldPrice}</del>
               </div>
