@@ -135,7 +135,7 @@ export const CountryModal: React.FC<CountryModalProps> = ({
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 text-gray-500 hover:text-gray-800 transition-colors p-1 rounded-full hover:bg-gray-100"
+          className="absolute top-5 right-5 text-gray-500 hover:text-gray-800 transition-colors p-1 rounded-full hover:bg-gray-100 cursor-pointer"
           aria-label="Cerrar"
         >
           <X size={22} />
@@ -159,15 +159,24 @@ export const CountryModal: React.FC<CountryModalProps> = ({
                 onClick={() => setActiveCode(c.code)}
                 className={`flex items-center justify-between p-4 rounded-2xl border cursor-pointer transition-all duration-150 ${
                   isSelected
-                    ? 'border-green-600 bg-green-50/50 ring-1 ring-green-600 shadow-sm'
+                    ? 'border-[#205aa7] bg-[#f0f5fc] ring-2 ring-[#205aa7] shadow-sm'
                     : 'border-gray-200 hover:border-gray-300 bg-white'
                 }`}
               >
                 <div className="flex items-center gap-3.5">
-                  <span className="text-2xl leading-none">{c.flag}</span>
+                  <img
+                    src={`https://flagcdn.com/w40/${c.code}.png`}
+                    alt={c.name}
+                    className="w-6 h-4.5 object-cover rounded-[3px] shadow-xs border border-gray-100 flex-none"
+                    onError={(e) => {
+                      (e.target as HTMLElement).style.display = 'none';
+                    }}
+                  />
                   <span className="font-bold text-gray-900 text-base">{c.name}</span>
                 </div>
-                <span className="text-gray-500 font-semibold text-sm">{c.currency}</span>
+                <span className={`font-semibold text-sm ${isSelected ? 'text-[#205aa7]' : 'text-gray-500'}`}>
+                  {c.currency}
+                </span>
               </div>
             );
           })}
@@ -177,7 +186,7 @@ export const CountryModal: React.FC<CountryModalProps> = ({
         <button
           type="button"
           onClick={handleConfirm}
-          className="w-full mt-6 py-3.5 px-6 rounded-2xl font-bold text-white text-base bg-[#16a34a] hover:bg-[#15803d] active:scale-[0.99] transition-all shadow-md flex items-center justify-center cursor-pointer"
+          className="w-full mt-6 py-3.5 px-6 rounded-2xl font-bold text-white text-base bg-[#205aa7] hover:bg-[#184987] active:scale-[0.99] transition-all shadow-md flex items-center justify-center cursor-pointer"
         >
           Continuar
         </button>
