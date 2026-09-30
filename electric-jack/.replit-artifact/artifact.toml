@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/diydeg-electric-jack/"
+title = "Diydeg Drive Electric Jack Kit"
+description = "A Diydeg Drive product landing page for a 5-ton 12V electric hydraulic car jack kit, preserving the visual layout of the existing CarPlay sales page while presenting the new roadside product."
+version = "1.0.0"
+id = "artifacts/diydeg-electric-jack"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/diydeg-electric-jack/" ]
+localPort = 19348
+
+[services.development]
+run = "pnpm --filter @workspace/diydeg-electric-jack run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/diydeg-electric-jack", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/diydeg-electric-jack/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19348"
+BASE_PATH = "/diydeg-electric-jack/"

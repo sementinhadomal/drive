@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Diydeg CarPlay Display"
+description = "An English-language sales landing page for the Diydeg 10.26-inch portable wireless CarPlay and Android Auto display, featuring product details, dual-camera specifications, and the supplied $39.90 promotional price."
+version = "1.0.0"
+id = "artifacts/diydeg-carplay"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20681
+
+[services.development]
+run = "pnpm --filter @workspace/diydeg-carplay run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/diydeg-carplay", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/diydeg-carplay/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20681"
+BASE_PATH = "/"
