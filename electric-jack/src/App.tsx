@@ -305,19 +305,6 @@ function Home() {
             </div>
 
             <aside className="product-purchase-card reveal delay-2" id="product-purchase" aria-labelledby="product-purchase-title">
-              <div className="flex items-center justify-between gap-2 mb-2">
-                <span className="text-xs font-bold text-green-700 bg-green-50 px-2.5 py-1 rounded-full border border-green-200">
-                  {country.flag} Edición para {country.name}
-                </span>
-                <button
-                  type="button"
-                  onClick={openCountryModal}
-                  className="text-xs text-gray-500 hover:text-gray-800 underline cursor-pointer"
-                >
-                  Cambiar país
-                </button>
-              </div>
-
               <h1 className="product-purchase-title" id="product-purchase-title">Kit de Gato Hidráulico Eléctrico — 5 Toneladas 12V</h1>
               <div className="product-rating-summary" role="img" aria-label="Calificación de 4.9 de 5 basada en 5,142 valoraciones">
                 <strong>4.9</strong>

@@ -418,19 +418,6 @@ function Home() {
             </div>
 
             <aside className="product-purchase-card reveal delay-2" id="product-purchase" aria-labelledby="product-purchase-title">
-              <div className="flex items-center justify-between gap-2 mb-2">
-                <span className="text-xs font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">
-                  {country.flag} Edición para {country.name}
-                </span>
-                <button
-                  type="button"
-                  onClick={openCountryModal}
-                  className="text-xs text-gray-500 hover:text-gray-800 underline cursor-pointer"
-                >
-                  Cambiar país
-                </button>
-              </div>
-
               <h1 className="product-purchase-title" id="product-purchase-title">Pantalla Inalámbrica CarPlay 10.26"</h1>
               <p className="product-purchase-summary">Apple CarPlay y Android Auto inalámbricos, con soporte para cámara frontal y trasera 1080p.</p>
               <div className="product-proof-line"><strong>10.26 pulgadas</strong><span aria-hidden="true">•</span><span>CarPlay + Android Auto inalámbrico</span></div>
