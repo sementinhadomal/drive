@@ -424,9 +424,9 @@ function Home() {
               
               <div className="product-price-row">
                 <div className="product-current-price">
-                  <span>{country.priceDisplay.symbol}</span>
                   <strong>{country.priceDisplay.integer}</strong>
                   {country.priceDisplay.decimal && <sup>{country.priceDisplay.decimal}</sup>}
+                  <span style={{ fontSize: '18px', marginLeft: '6px', fontWeight: 800, color: '#205aa7' }}>{country.currency}</span>
                 </div>
                 <del className="product-old-price">{country.formattedOldPrice}</del>
               </div>

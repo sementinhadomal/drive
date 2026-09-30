@@ -38,18 +38,18 @@ export const CountryProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const formatSubtotal = (quantity: number): string => {
     const total = country.price * quantity;
     if (countryCode === 'es') {
-      return `${total.toFixed(2).replace('.', ',')} €`;
+      return `${total.toFixed(2).replace('.', ',')} EUR`;
     }
     if (countryCode === 'mx') {
-      return `$${Math.round(total).toLocaleString('es-MX')} MXN`;
+      return `${Math.round(total).toLocaleString('es-MX')} MXN`;
     }
     if (countryCode === 'co') {
-      return `$${Math.round(total).toLocaleString('es-CO')} COP`;
+      return `${Math.round(total).toLocaleString('es-CO')} COP`;
     }
     if (countryCode === 'uy') {
-      return `$U ${Math.round(total).toLocaleString('es-UY')}`;
+      return `${Math.round(total).toLocaleString('es-UY')} UYU`;
     }
-    return `${country.currencySymbol}${total}`;
+    return `${total} ${country.currency}`;
   };
 
   return (
